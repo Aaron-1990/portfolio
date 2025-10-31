@@ -1,0 +1,90 @@
+# Portfolio Tracker - Backend Dependencies
+# 
+# PRINCIPIOS DE GESTIÓN DE DEPENDENCIAS:
+# 1. Versiones pinned para reproducibilidad
+# 2. Dependencias mínimas necesarias (no bloat)
+# 3. Separación por categoría para mantenibilidad
+# 4. Compatibilidad verificada entre paquetes
+#
+# Actualizado: 2025-10-31
+# Python: 3.11+
+
+# ============================================
+# CORE FRAMEWORK
+# ============================================
+# FastAPI incluye soporte para CORS via Starlette
+# No se requiere paquete adicional para CORS
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+python-multipart==0.0.6
+
+# ============================================
+# DATABASE & ORM
+# ============================================
+sqlalchemy==2.0.23
+alembic==1.12.1
+aiosqlite==0.19.0
+
+# ============================================
+# DATA VALIDATION & SETTINGS
+# ============================================
+pydantic==2.5.0
+pydantic-settings==2.1.0
+
+# ============================================
+# HTTP CLIENT & EXTERNAL APIS
+# ============================================
+httpx==0.25.1
+yfinance==0.2.32
+requests==2.31.0
+
+# ============================================
+# ENVIRONMENT & CONFIGURATION
+# ============================================
+python-dotenv==1.0.0
+
+# ============================================
+# BACKGROUND TASKS & SCHEDULING
+# ============================================
+apscheduler==3.10.4
+
+# ============================================
+# LOGGING
+# ============================================
+python-json-logger==2.0.7
+
+# ============================================
+# TESTING (Dev Dependencies)
+# ============================================
+pytest==7.4.3
+pytest-asyncio==0.21.1
+pytest-cov==4.1.0
+
+# ============================================
+# CODE QUALITY (Dev Dependencies)
+# ============================================
+black==23.11.0
+flake8==6.1.0
+mypy==1.7.1
+isort==5.12.0
+
+# ============================================
+# NOTAS IMPORTANTES:
+# ============================================
+# 
+# CORS en FastAPI:
+# ---------------
+# FastAPI incluye soporte para CORS a través de:
+#   from fastapi.middleware.cors import CORSMiddleware
+# No se requiere instalar paquetes adicionales.
+#
+# Uso:
+#   app.add_middleware(
+#       CORSMiddleware,
+#       allow_origins=["http://localhost:5173"],
+#       allow_credentials=True,
+#       allow_methods=["*"],
+#       allow_headers=["*"],
+#   )
+#
+# ============================================
